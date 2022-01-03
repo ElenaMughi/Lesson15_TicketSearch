@@ -31,4 +31,21 @@ class ManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSearchNothing() {
+        TicketsInfo[] expected = new TicketsInfo[]{};
+        Manager repo = new Manager();
+        repo.addTicket(one);
+        repo.addTicket(two);
+        repo.addTicket(three);
+        repo.addTicket(four);
+        repo.addTicket(five);
+        repo.addTicket(six);
+//        repo.deleteTicket(six);
+
+        TicketsInfo[] actual = repo.findAll("GOJ", "LED");
+
+        assertArrayEquals(expected, actual);
+    }
 }
