@@ -38,8 +38,6 @@ class ManagerTest {
         Manager repo = new Manager();
         repo.addTicket(one);
         repo.addTicket(two);
-        repo.addTicket(three);
-        repo.addTicket(four);
         repo.addTicket(five);
         repo.addTicket(six);
 //        repo.deleteTicket(six);
