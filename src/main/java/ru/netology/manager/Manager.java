@@ -4,6 +4,7 @@ import ru.netology.domain.TicketsInfo;
 import ru.netology.repository.TicketsRepository;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Manager {
 
@@ -19,10 +20,11 @@ public class Manager {
 
     public TicketsInfo[] findAll(String from, String to) {
         TicketsRepository setFindAll = new TicketsRepository();
-        for (TicketsInfo ii : repo.getTickets())
-            if ((ii.getPointFrom() == from) & (ii.getPointTo() == to)) {
-                setFindAll.saveTicket(ii);
+        for (TicketsInfo ticket : repo.getTickets()) {
+            if (ticket.getPointFrom().equals(from) && ticket.getPointTo().equals(to)) {
+                setFindAll.saveTicket(ticket);
             }
+        };
         TicketsInfo[] out = setFindAll.getTickets();
         Arrays.sort(out);
         return out;
